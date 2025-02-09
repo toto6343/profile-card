@@ -1,0 +1,622 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+/* 3단계 - CSS 초기화 */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* 3단계 - 프로필 박스 만들기 */
+body {
+  background-color: #ebfaff;
+} 
+
+section {
+	width: 340px;
+	padding: 30px;
+	background-color: #fff;
+	margin: 50px auto;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+/* 4단계 - 상단 버튼 만들기 */
+section nav.menu {
+	width: 100%;
+}
+
+section nav.menu::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+section nav.menu a {
+	font-size: 20px;
+	color: #666;
+}
+
+section nav.menu a:nth-of-type(1) {
+	float: left;
+}
+
+section nav.menu a:nth-of-type(2) {
+	float: right;
+}
+
+/* 5단계 - 프로필 영역 만들기 */
+section article.profile {
+	width: 100%;
+	text-align: center;
+}
+section article.profile img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin-bottom: 20px;	
+}
+
+section article.profile h1 {
+	font-weight: bold;
+	font-size: 22px;
+	font-family: "arial";
+	line-height: 1;
+	color: #555;
+	margin-bottom: 5px;
+}
+section article.profile h2 {
+	font-weight: normal;
+	font-size: 12px;
+	font-family: "arial";
+	color: #bbb;
+	margin-bottom: 30px;
+}
+section a.btnView {
+	display: block;
+	width: 180px;
+	height: 32px;
+	margin: 0px auto 20px;
+	background-color:#444;
+	border-radius: 16px;
+	font-weight: bold;
+	font-size: 10px;
+	font-family: "arial";
+	color: #fff;
+	line-height: 32px;
+	text-align: center;
+}
+
+/* 6단계 - 연락처 목록 만들기 */
+section ul.contact {
+	margin-bottom: 25px; 
+}
+section ul.contact li {
+	width: 100%;
+	padding: 10px 0px;
+	border-bottom: 1px solid #eee;
+}
+section ul.contact li:last-child {
+	border-bottom: none;
+}
+section ul.contact li i {
+	width: 20%;
+	text-align: center;
+	color: #555;
+	font-size: 15px;
+	text-shadow: 2px 2px 2px #ddd;
+}
+section ul.contact li span {
+	font-weight: normal;
+	font-size: 11px;
+	font-family: "orbitron";
+	color: #555;
+	letter-spacing: 1px;
+}
+
+/* 7단계 - 멤버별 링크 만들기 */
+section nav.others {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+section nav.others a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 0 12px;
+	opacity: 0.8;
+	transition: all 0.5s ease;
+}
+
+/* member1 others 스타일 */
+body.member1 section nav.others a:nth-of-type(1) {
+    background: rgba(53, 224, 247, 0.7);
+    box-shadow: 0 0 5px rgba(53, 224, 247, 0.3);
+}
+
+body.member1 section nav.others a:nth-of-type(2) {
+    background: rgba(85, 245, 178, 0.7);
+}
+
+body.member1 section nav.others a:nth-of-type(3) {
+    background: rgba(255, 17, 196, 0.7);
+}
+
+body.member1 section nav.others a:nth-of-type(4) {
+    background: rgba(132, 80, 255, 0.7);
+}
+
+body.member1 section nav.others a:nth-of-type(5) {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* member2 others 스타일 */
+body.member2 section nav.others a:nth-of-type(1) {
+    background: #35e0f7;
+}
+
+body.member2 section nav.others a:nth-of-type(2) {
+    background: #55f5b2;
+    box-shadow: 0 0 10px rgba(85, 245, 178, 0.5);
+}
+
+body.member2 section nav.others a:nth-of-type(3) {
+    background: #ff11c4;
+}
+
+body.member2 section nav.others a:nth-of-type(4) {
+    background: #a011ff;
+}
+
+body.member2 section nav.others a:nth-of-type(5) {
+    background: #38bdf8;
+}
+
+/* member3 others 스타일 */
+body.member3 section nav.others a:nth-of-type(1) {
+    background: rgba(53, 224, 247, 0.7);
+}
+
+body.member3 section nav.others a:nth-of-type(2) {
+    background: rgba(85, 245, 178, 0.7);
+    box-shadow: 0 0 5px rgba(85, 245, 178, 0.3);
+}
+
+body.member3 section nav.others a:nth-of-type(3) {
+    background: rgba(255, 17, 196, 0.7);
+}
+
+body.member3 section nav.others a:nth-of-type(4) {
+    background: rgba(132, 80, 255, 0.7);
+}
+
+body.member3 section nav.others a:nth-of-type(5) {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* member4 others 스타일 */
+body.member4 section nav.others a:nth-of-type(1) {
+    background: rgba(53, 224, 247, 0.7);
+}
+
+body.member4 section nav.others a:nth-of-type(2) {
+    background: rgba(85, 245, 178, 0.7);
+    box-shadow: 0 0 5px rgba(85, 245, 178, 0.3);
+}
+
+body.member4 section nav.others a:nth-of-type(3) {
+    background: rgba(255, 17, 196, 0.7);
+}
+
+body.member4 section nav.others a:nth-of-type(4) {
+    background: rgba(132, 80, 255, 0.7);
+}
+
+body.member4 section nav.others a:nth-of-type(5) {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* member5 others 스타일 */
+body.member5 section nav.others a:nth-of-type(1) {
+    background: rgba(53, 224, 247, 0.7);
+}
+
+body.member5 section nav.others a:nth-of-type(2) {
+    background: rgba(85, 245, 178, 0.7);
+    box-shadow: 0 0 5px rgba(85, 245, 178, 0.3);
+}
+
+body.member5 section nav.others a:nth-of-type(3) {
+    background: rgba(255, 17, 196, 0.7);
+}
+
+body.member5 section nav.others a:nth-of-type(4) {
+    background: rgba(132, 80, 255, 0.7);
+}
+
+body.member5 section nav.others a:nth-of-type(5) {
+    background: rgba(56, 189, 248, 0.7);
+}
+
+/* 선택된 상태 스타일을 모든 멤버에게 적용 */
+section nav.others a.on {
+    opacity: 1;
+    transform: scale(1.8);
+    box-shadow: 
+        0 0 25px rgba(255, 255, 255, 0.9),
+        0 0 50px currentColor,
+        0 0 75px currentColor;
+    border: 4px solid #fff;
+    position: relative;
+    z-index: 2;
+}
+
+/* 선택된 상태 추가 효과를 모든 멤버에게 적용 */
+section nav.others a.on::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+section nav.others a.on::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    left: -6px;
+    top: -6px;
+    animation: pulse 1.5s infinite;
+}
+
+/* 각 멤버별 선택 상태의 색상 설정 */
+body.member1 section nav.others a.on { 
+    color: #35e0f7; 
+    background: linear-gradient(45deg, #35e0f7, #4affff);
+}
+body.member2 section nav.others a.on { 
+    color: #55f5b2; 
+    background: linear-gradient(45deg, #55f5b2, #a0ff9d);
+}
+body.member3 section nav.others a.on { 
+    color: #ff11c4; 
+    background: linear-gradient(45deg, #ff11c4, #ef74ff);
+}
+body.member4 section nav.others a.on { 
+    color: #a011ff; 
+    background: linear-gradient(45deg, #a011ff, #8e74ff);
+}
+body.member5 section nav.others a.on { 
+    color: #38bdf8; 
+    background: linear-gradient(45deg, #38bdf8, #0284c7);
+}
+
+/* hover 효과 강화 */
+section nav.others a:hover {
+    opacity: 1;
+    transform: scale(1.4);
+    box-shadow: 0 0 30px currentColor;
+}
+
+/* 9단계 - 멤버별 프로필 완성하기 */
+/* member1 */
+body.member1 {
+    background: linear-gradient(135deg, rgba(53, 224, 247, 0.4) 0%, rgba(74, 255, 255, 0.3) 100%);
+}
+
+body.member1 section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 150, 255, 0.1);
+}
+
+body.member1 section article.profile img {
+    box-shadow: 5px 15px 30px rgba(0, 150, 255, 0.3);
+    transition: 0.5s;
+}
+
+body.member1 section article.profile img:hover {
+    transform: scale(1.05);
+}
+
+body.member1 section a.btnView {
+    background: linear-gradient(45deg, #35e0f7, #4affff);
+    box-shadow: 0 5px 20px rgba(53, 224, 247, 0.4);
+}
+
+/* member2 */
+body.member2 {
+    background: linear-gradient(135deg, rgba(85, 245, 178, 0.4) 0%, rgba(160, 255, 157, 0.3) 100%);
+}
+
+body.member2 section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(85, 245, 178, 0.1);
+}
+
+body.member2 section article.profile img {
+    box-shadow: 5px 15px 30px rgba(106, 120, 209, 0.3);
+    transition: 0.5s;
+}
+
+body.member2 section article.profile img:hover {
+    transform: scale(1.05) rotate(-5deg);
+}
+
+body.member2 section a.btnView {
+    background: linear-gradient(45deg, #55f5b2, #a0ff9d);
+    box-shadow: 0 5px 20px rgba(85, 245, 178, 0.4);
+}
+
+/* member3 */
+body.member3 {
+    background: linear-gradient(135deg, rgba(255, 17, 196, 0.4) 0%, rgba(239, 116, 255, 0.3) 100%);
+}
+
+body.member3 section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(255, 17, 196, 0.1);
+}
+
+body.member3 section article.profile img {
+    box-shadow: 5px 15px 30px rgba(46, 213, 115, 0.3);
+    transition: 0.5s;
+}
+
+body.member3 section article.profile img:hover {
+    transform: scale(1.05);
+}
+
+body.member3 section a.btnView {
+    background: linear-gradient(45deg, #ff11c4, #ef74ff);
+    box-shadow: 0 5px 20px rgba(255, 17, 196, 0.4);
+}
+
+/* member4 */
+body.member4 {
+    background: linear-gradient(135deg, rgba(160, 17, 255, 0.4) 0%, rgba(142, 116, 255, 0.3) 100%);
+}
+
+body.member4 section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(160, 17, 255, 0.1);
+}
+
+body.member4 section article.profile img {
+    box-shadow: 5px 15px 30px rgba(132, 80, 255, 0.3);
+    transition: 0.5s;
+}
+
+body.member4 section article.profile img:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+body.member4 section a.btnView {
+    background: linear-gradient(45deg, #a011ff, #8e74ff);
+    box-shadow: 0 5px 20px rgba(160, 17, 255, 0.4);
+}
+
+/* member5 */
+body.member5 {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(2, 132, 199, 0.3) 100%);
+}
+
+body.member5 section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.1);
+}
+
+body.member5 section article.profile img {
+    box-shadow: 5px 15px 30px rgba(33, 150, 243, 0.3);
+    transition: 0.5s;
+}
+
+body.member5 section article.profile img:hover {
+    transform: scale(1.05);
+}
+
+body.member5 section a.btnView {
+    background: linear-gradient(45deg, #38bdf8, #0284c7);
+    box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* 멤버별 스타일 업데이트 */
+
+/* 공통 애니메이션 효과 */
+section {
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.btnView {
+    transition: all 0.3s ease;
+}
+
+.btnView:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.contact li {
+    transition: transform 0.3s ease;
+}
+
+.contact li:hover {
+    transform: translateX(10px);
+}
+
+/* 반응형 디자인 개선 */
+@media (max-width: 480px) {
+    section {
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+/* member1 nav 스타일 */
+body.member1 section nav.menu a {
+    color: rgba(0, 168, 255, 0.7);
+}
+
+body.member1 section nav.menu a:hover {
+    color: #00a8ff;
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.4);
+}
+
+/* member2 nav 스타일 */
+body.member2 section nav.menu a {
+    color: rgba(106, 120, 209, 0.7);
+}
+
+body.member2 section nav.menu a:hover {
+    color: #6a78d1;
+    text-shadow: 0 0 15px rgba(106, 120, 209, 0.4);
+}
+
+/* member3 nav 스타일 */
+body.member3 section nav.menu a {
+    color: rgba(46, 213, 115, 0.7);
+}
+
+body.member3 section nav.menu a:hover {
+    color: #2ed573;
+    text-shadow: 0 0 15px rgba(46, 213, 115, 0.4);
+}
+
+/* member4 nav 스타일 */
+body.member4 section nav.menu a {
+    color: rgba(132, 80, 255, 0.7);
+}
+
+body.member4 section nav.menu a:hover {
+    color: #8450ff;
+    text-shadow: 0 0 15px rgba(132, 80, 255, 0.4);
+}
+
+/* member5 nav 스타일 */
+body.member5 section nav.menu a {
+    color: rgba(33, 150, 243, 0.7);
+}
+
+body.member5 section nav.menu a:hover {
+    color: #2196f3;
+    text-shadow: 0 0 15px rgba(33, 150, 243, 0.4);
+}
+
+/* 펄스 애니메이션 수정 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* 버튼 호버 효과 강화 */
+section a.btnView:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 공통 배경 스타일 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(80px);
+    z-index: -1;
+}
+
+/* member1 배경 스타일 */
+body.member1 {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(53, 224, 247, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(74, 255, 255, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(53, 224, 247, 0.1) 0%, rgba(74, 255, 255, 0.1) 100%);
+}
+
+/* member2 배경 스타일 */
+body.member2 {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(85, 245, 178, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(160, 255, 157, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(85, 245, 178, 0.1) 0%, rgba(160, 255, 157, 0.1) 100%);
+}
+
+/* member3 배경 스타일 */
+body.member3 {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 17, 196, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(239, 116, 255, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(255, 17, 196, 0.1) 0%, rgba(239, 116, 255, 0.1) 100%);
+}
+
+/* member4 배경 스타일 */
+body.member4 {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(160, 17, 255, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(142, 116, 255, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(160, 17, 255, 0.1) 0%, rgba(142, 116, 255, 0.1) 100%);
+}
+
+/* member5 배경 스타일 */
+body.member5 {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(2, 132, 199, 0.1) 100%);
+}
+
+/* 섹션 스타일 업데이트 */
+section {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 100px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+section:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-5px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 120px rgba(255, 255, 255, 0.3);
+}
