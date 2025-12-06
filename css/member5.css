@@ -1,0 +1,532 @@
+@charset 'utf-8';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 기하학적 패턴 배경 */
+body::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: 
+		linear-gradient(30deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+		linear-gradient(150deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+		linear-gradient(30deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+		linear-gradient(150deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05));
+	background-size: 80px 140px;
+	background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+	animation: geometricMove 30s linear infinite;
+}
+
+@keyframes geometricMove {
+	0% {
+		background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+	}
+	100% {
+		background-position: 80px 140px, 80px 140px, 120px 210px, 120px 210px;
+	}
+}
+
+/* 부유하는 사각형들 */
+body::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image:
+		linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 60%);
+	background-size: 300px 300px;
+	animation: floatSquares 20s linear infinite;
+}
+
+@keyframes floatSquares {
+	0% {
+		transform: translate(0, 0) rotate(0deg);
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 0.6;
+	}
+	100% {
+		transform: translate(100px, -100px) rotate(45deg);
+		opacity: 0.3;
+	}
+}
+
+section {
+	width: 450px;
+	background: rgba(255, 255, 255, 0.98);
+	backdrop-filter: blur(25px) saturate(200%);
+	border-radius: 35px;
+	padding: 50px;
+	box-shadow: 
+		0 35px 70px rgba(0, 0, 0, 0.2),
+		0 0 120px rgba(67, 100, 247, 0.3),
+		inset 0 2px 0 rgba(255, 255, 255, 1);
+	position: relative;
+	z-index: 1;
+	border: 2px solid rgba(255, 255, 255, 0.6);
+	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 프리즘 효과 */
+section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 35px;
+	background: linear-gradient(135deg, 
+		rgba(0, 82, 212, 0.1) 0%, 
+		rgba(67, 100, 247, 0.1) 50%, 
+		rgba(111, 177, 252, 0.1) 100%);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+section:hover::before {
+	opacity: 1;
+}
+
+section:hover {
+	transform: translateY(-15px) scale(1.01);
+	box-shadow: 
+		0 45px 90px rgba(0, 0, 0, 0.3),
+		0 0 180px rgba(67, 100, 247, 0.5),
+		inset 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+/* 상단 네비게이션 */
+section nav.menu {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 38px;
+}
+
+section nav.menu a {
+	width: 56px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #0052D4, #4364F7);
+	border-radius: 20px;
+	color: #fff;
+	font-size: 22px;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 8px 25px rgba(0, 82, 212, 0.4);
+	position: relative;
+	overflow: hidden;
+}
+
+section nav.menu a::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+	transform: translateX(-100%) skewX(-15deg);
+	transition: transform 0.6s ease;
+}
+
+section nav.menu a:hover::before {
+	transform: translateX(100%) skewX(-15deg);
+}
+
+section nav.menu a:hover {
+	transform: translateY(-5px) scale(1.08);
+	box-shadow: 0 12px 35px rgba(0, 82, 212, 0.6);
+	background: linear-gradient(135deg, #4364F7, #6FB1FC);
+}
+
+section nav.menu a:active {
+	transform: translateY(-2px) scale(1.03);
+}
+
+/* 프로필 영역 */
+section article.profile {
+	text-align: center;
+	margin-bottom: 42px;
+}
+
+section article.profile .img-wrapper {
+	position: relative;
+	width: 230px;
+	height: 230px;
+	margin: 0 auto 35px;
+}
+
+/* 다이아몬드 형태의 테두리 */
+section article.profile .img-wrapper::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, 
+		#0052D4, 
+		#4364F7, 
+		#6FB1FC, 
+		#4364F7, 
+		#0052D4);
+	background-size: 300% 300%;
+	animation: diamondGradient 5s ease infinite;
+	z-index: -1;
+	border-radius: 50%;
+	transform: rotate(0deg);
+}
+
+@keyframes diamondGradient {
+	0%, 100% {
+		background-position: 0% 50%;
+		transform: rotate(0deg) scale(1);
+	}
+	50% {
+		background-position: 100% 50%;
+		transform: rotate(180deg) scale(1.05);
+	}
+}
+
+/* 빛나는 링 효과 */
+section article.profile .img-wrapper::after {
+	content: '';
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	border: 3px solid rgba(67, 100, 247, 0.3);
+	border-radius: 50%;
+	animation: ringPulse 3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+	0%, 100% {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+}
+
+section article.profile img {
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 5px solid #fff;
+	box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+	transition: all 0.5s ease;
+	position: relative;
+	z-index: 1;
+	margin-top: 5px;
+}
+
+section article.profile img:hover {
+	transform: scale(1.07);
+	box-shadow: 0 20px 55px rgba(0, 82, 212, 0.4);
+}
+
+section article.profile h1 {
+	font-size: 38px;
+	font-weight: 800;
+	background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 12px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: -1px;
+}
+
+section article.profile h2 {
+	font-size: 17px;
+	font-weight: 600;
+	color: #5a7ba8;
+	margin-bottom: 32px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+section a.btnView {
+	display: inline-block;
+	padding: 18px 60px;
+	background: linear-gradient(135deg, #0052D4 0%, #4364F7 100%);
+	border-radius: 50px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	box-shadow: 0 10px 30px rgba(0, 82, 212, 0.4);
+	transition: all 0.4s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+section a.btnView::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+	transition: left 0.7s ease;
+}
+
+section a.btnView:hover::before {
+	left: 100%;
+}
+
+section a.btnView::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 50px;
+	padding: 2px;
+	background: linear-gradient(135deg, #6FB1FC, #0052D4);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+section a.btnView:hover::after {
+	opacity: 1;
+}
+
+section a.btnView:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 40px rgba(0, 82, 212, 0.6);
+	background: linear-gradient(135deg, #4364F7 0%, #6FB1FC 100%);
+}
+
+section a.btnView:active {
+	transform: translateY(-2px);
+}
+
+/* 연락처 목록 */
+section ul.contact {
+	margin-bottom: 38px;
+}
+
+section ul.contact li {
+	display: flex;
+	align-items: center;
+	padding: 20px 24px;
+	margin-bottom: 15px;
+	background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+	border-radius: 20px;
+	transition: all 0.4s ease;
+	border: 2px solid rgba(0, 82, 212, 0.1);
+	position: relative;
+	overflow: hidden;
+}
+
+section ul.contact li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(180deg, #0052D4, #6FB1FC);
+	transform: translateX(-100%);
+	transition: transform 0.4s ease;
+}
+
+section ul.contact li:last-child {
+	margin-bottom: 0;
+}
+
+section ul.contact li:hover {
+	transform: translateX(15px);
+	background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+	box-shadow: 0 10px 35px rgba(0, 82, 212, 0.2);
+	border-color: rgba(67, 100, 247, 0.3);
+}
+
+section ul.contact li:hover::before {
+	transform: translateX(0);
+}
+
+section ul.contact li i {
+	width: 52px;
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #0052D4, #4364F7);
+	border-radius: 18px;
+	color: #fff;
+	font-size: 20px;
+	margin-right: 22px;
+	box-shadow: 0 6px 20px rgba(0, 82, 212, 0.3);
+	transition: all 0.4s ease;
+}
+
+section ul.contact li:hover i {
+	transform: scale(1.15) rotate(360deg);
+	box-shadow: 0 10px 30px rgba(0, 82, 212, 0.5);
+	background: linear-gradient(135deg, #4364F7, #6FB1FC);
+}
+
+section ul.contact li span {
+	font-size: 14px;
+	font-weight: 600;
+	color: #1e3a5f;
+	font-family: 'Orbitron', monospace;
+	letter-spacing: 0.5px;
+}
+
+/* 멤버 네비게이션 */
+section nav.others {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	padding-top: 35px;
+	border-top: 2px solid rgba(67, 100, 247, 0.15);
+}
+
+section nav.others a {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: rgba(67, 100, 247, 0.3);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	cursor: pointer;
+}
+
+section nav.others a::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: inherit;
+	animation: ripple 2s ease-out infinite;
+	opacity: 0;
+}
+
+@keyframes ripple {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(3);
+		opacity: 0;
+	}
+}
+
+section nav.others a:hover::before {
+	animation: ripple 1s ease-out infinite;
+}
+
+section nav.others a:hover {
+	transform: scale(1.8);
+	box-shadow: 0 0 35px currentColor;
+}
+
+section nav.others a.on {
+	width: 55px;
+	height: 16px;
+	border-radius: 8px;
+	background: linear-gradient(90deg, #0052D4, #6FB1FC);
+	box-shadow: 0 0 45px rgba(67, 100, 247, 0.8);
+}
+
+section nav.others a.on::before {
+	animation: none;
+}
+
+section nav.others a:nth-of-type(1) { background: #667eea; }
+section nav.others a:nth-of-type(2) { background: #00ff9d; }
+section nav.others a:nth-of-type(3) { background: #11998e; }
+section nav.others a:nth-of-type(4) { background: #8a2be2; }
+section nav.others a:nth-of-type(5) { background: #4364F7; }
+
+/* 스킬 태그 */
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: center;
+	margin: 32px 0 38px;
+}
+
+.skill-tag {
+	padding: 11px 26px;
+	background: linear-gradient(135deg, rgba(0, 82, 212, 0.1), rgba(111, 177, 252, 0.1));
+	border: 2px solid rgba(67, 100, 247, 0.3);
+	border-radius: 35px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #0052D4;
+	transition: all 0.4s ease;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	box-shadow: 0 4px 15px rgba(0, 82, 212, 0.1);
+}
+
+.skill-tag:hover {
+	background: linear-gradient(135deg, rgba(0, 82, 212, 0.2), rgba(111, 177, 252, 0.2));
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 82, 212, 0.3);
+	border-color: rgba(67, 100, 247, 0.5);
+	color: #4364F7;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+	section {
+		width: 95%;
+		padding: 40px 30px;
+	}
+
+	section article.profile h1 {
+		font-size: 32px;
+	}
+	
+	section article.profile .img-wrapper {
+		width: 200px;
+		height: 200px;
+	}
+	
+	section article.profile img {
+		width: 190px;
+		height: 190px;
+	}
+}
