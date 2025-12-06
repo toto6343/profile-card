@@ -6,6 +6,23 @@
 
 이 프로젝트는 각 팀 멤버의 개성과 직무를 반영한 독특한 디자인의 프로필 카드를 제공합니다. 각 멤버는 완전히 다른 색상 팔레트, 애니메이션 효과, 그리고 인터랙티브 요소를 가지고 있습니다.
 
+## 📸 스크린샷
+
+### Member 1 - Emma Mitchell (Frontend Developer)
+<img width="493" alt="Member 1 - Emma Mitchell Profile" src="https://github.com/user-attachments/assets/c1a66c0e-b2b6-415e-b725-30d0d64801e3" />
+
+### Member 2 - Luna Noir (QA Specialist)
+<img width="433" alt="Member 2 - Luna Noir Profile" src="https://github.com/user-attachments/assets/2da039ba-2ac2-466a-bd9a-5d412ca2a2c9" />
+
+### Member 3 - Marcus Green (Database Administrator)
+<img width="430" alt="Member 3 - Marcus Green Profile" src="https://github.com/user-attachments/assets/ebc77478-8f87-4b22-8192-c2753b5dbe28" />
+
+### Member 4 - Jay Urban (Backend Developer)
+<img width="401" alt="Member 4 - Jay Urban Profile" src="https://github.com/user-attachments/assets/75592886-0bf8-413f-94aa-e9e2869f0c08" />
+
+### Member 5 - Kim Woohyuk (Project Manager)
+<img width="419" alt="Member 5 - Kim Woohyuk Profile" src="https://github.com/user-attachments/assets/648268f8-8e3c-47d1-8c6f-601fe3810245" />
+
 ## 👥 팀 멤버
 
 ### Member 1 - Emma Mitchell (Frontend Developer)
